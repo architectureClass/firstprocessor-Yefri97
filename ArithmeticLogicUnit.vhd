@@ -14,13 +14,14 @@ architecture Behavioral of ArithmeticLogicUnit is
 
 begin
 
-process (aluOp)
+process (aluOp, op1, op2)
 begin
 	case (aluOp) is
-		when "00000" => result <= op1 + op2;
-		when "00001" => result <= op1 - op2;
-		when "00010" => result <= op1 and op2;
-		when "00011" => result <= op1 or op2;
+		when "000000" => result <= op1 + op2;
+		when "000001" => result <= op1 - op2;
+		when "000010" => result <= op1 and op2;
+		when "000011" => result <= op1 or op2;
+		when others => result <= op1;
 	end case;
 end process;
 

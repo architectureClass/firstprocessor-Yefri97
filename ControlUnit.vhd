@@ -18,11 +18,13 @@ begin
 	case (op) is
 		when "10" =>
 			case (op3) is
-				when "000000" => aluOp <= "00000"; -- ADD
-				when "000100" => aluOp <= "00001"; -- SUB
-				when "000010" => aluOp <= "00010"; -- OR
-				when "000001" => aluOp <= "00011"; -- AND
+				when "000000" => aluOp <= "000000"; -- ADD
+				when "000100" => aluOp <= "000001"; -- SUB
+				when "000010" => aluOp <= "000010"; -- OR
+				when "000001" => aluOp <= "000011"; -- AND
+				when others => aluOp <= "111111";
 			end case;
+		when others => aluOp <= "111111";
 	end case;
 end process;
 

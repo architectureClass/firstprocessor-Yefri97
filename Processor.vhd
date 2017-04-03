@@ -116,7 +116,9 @@ begin
 		op1 => crs1,
 		op2 => crs2,
 		aluOp => op,
-		result => result
+		result => res
 	);
+	
+	result <= res;
 	
 end Behavioral;
